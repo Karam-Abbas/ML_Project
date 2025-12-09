@@ -14,8 +14,17 @@ RUN pip install -r requirements.txt
 
 # Copy application code
 COPY app/ ./app/
-COPY models/ ./models/
 COPY wsgi.py .
+COPY .dvc ./.dvc
+COPY .git ./.git
+COPY models.dvc ./
+
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+
+RUN dvc pull models.dvc
 
 # Create upload directory
 RUN mkdir -p /tmp/uploads

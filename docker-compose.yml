@@ -1,11 +1,13 @@
 services:
   brain-tumor-api:
-    build: .
+    build:
+      context: .
+      args:
+        AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
     ports:
       - "8000:8000"
     environment:
       - FLASK_ENV=production
       - MODEL_PATH=/app/models/best_vit_brain_tumor.pth
-    volumes:
-      - ./models:/app/models:ro
     restart: unless-stopped
