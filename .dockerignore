@@ -8,7 +8,6 @@ __pycache__
 *.egg-info
 dist
 build
-.git
 .gitignore
 .env
 .venv
@@ -17,8 +16,6 @@ research/
 data/
 *.ipynb
 .ipynb_checkpoints
-*.dvc
-.dvc
 README.md
 docker-compose.yml
 tests/
