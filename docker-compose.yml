@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  brain-tumor-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=production
+      - MODEL_PATH=/app/models/best_vit_brain_tumor.pth
+    volumes:
+      - ./models:/app/models:ro
+    restart: unless-stopped

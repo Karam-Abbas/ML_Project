@@ -1,18 +1,25 @@
-## 🧠 Brain Tumour Classification — Phase 1 (CNN Model)
+# Brain Tumor Classification API
 
-This project focuses on detecting and classifying brain tumours using deep learning techniques. In **Phase 1**, we implement a **Convolutional Neural Network (CNN)** to perform supervised image classification on a labelled MRI dataset.
+Deep learning-based brain tumor classification using Vision Transformer (ViT).
 
-### 🔍 What This Phase Covers
+## Features
+- 4-class classification: Glioma, Meningioma, No Tumor, Pituitary
+- REST API with Flask
+- Docker support
+- Production-ready deployment
 
-* Preprocessing and loading a brain tumour MRI dataset
-* Implementing a **basic CNN architecture** for image classification
-* Training the model for **10 epochs** to establish a baseline performance
-* Evaluating the results using:
+## Quick Start
 
-  * **Accuracy & loss curves**
-  * **Confusion Matrix** to visualize class-wise performance
+### Local Development
+pip install -r requirements.txt
+python run.py### Docker
+docker build -t brain-tumor-api .
+docker run -p 8000:8000 brain-tumor-api### API Endpoints
+- `GET /` - Web interface
+- `POST /predict` - Upload image for classification
+- `GET /health` - Health check
 
-### 🎯 Objective
-
-The goal of Phase 1 is to build a simple, functional pipeline to understand the dataset, model behaviour, and initial classification accuracy. This acts as the foundation for more advanced models and optimization in later phases.
-
+## Model
+- Architecture: Vision Transformer (ViT-Base)
+- Input: 224x224 RGB images
+- Classes: 4 tumor types

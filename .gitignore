@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+
+# Flask
+instance/
+.webassets-cache
+
+# Models (use DVC or separate storage)
+models/*.pth
+
+# Data (too large for git)
+data/
+research/data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary
+/tmp/
+*.tmp
+
+.ipynb_checkpoints/*
